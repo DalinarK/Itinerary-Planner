@@ -1,20 +1,13 @@
-<!doctype html>
+<!doctype>
 
-<html lang="en" ng-app>
+<html ng-app="myApp">
 <head>
-  <meta charset="utf-8">
-
   <title>Index Page</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
  
 </head>
 
@@ -23,21 +16,39 @@
 <div class="container" ng-controller="AppCtrl">
 	<h1>Itinerary Planner</h1>
 	<table class="table">
+		<thread>
+			<tr>
+				<th> Vacation Spot </th>>
+				<th> Number of Days </th>
+				<th> Demographic </th>
+				<th> Photo URL </th>
+				<th> Cost </th>
+			</tr>
+			<tbody>
+				<tr ng-repeat="destination in vacationList"></tr>
+					<td> {{destination.locationl}}</td>
+			</tbody>
+		</thread>
 		<tr>
-			<th> Vacation Spot </th>>
-			<th> Number of Days </th>
-			<th> Demographic </th>
-			<th> Photos </th>
-			<th> Cost </th>
+			<th> <input type="text" name="vLocation"> </th>
+			<th> <input type="number" name="numDays"></th>
+			<th> <select>
+					<option value="couples"> "Couples" </option>
+					<option value="group"> "Groups" </option>
+					<option value="solo"> "Solo" </option>
+				</select>	
+			<th> <input type="url" name"photoURL"> </th>
+			<th> <form>
+				  <input type="radio" name="cost" value="$" checked> $
+				  <input type="radio" name="cost" value="$$"> $$
+				  <input type="radio" name="cost" value="$$$"> $$$ 
+				</form> </th>
 		</tr>
 	</table>
 
 </div>
-	<input ng-model="test">
-	{{test}} 	{{test}}
-
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
-  <script src="controllers/controller.js"></script>
+  <script src="controller.js"></script>
 </body>
 </html>
