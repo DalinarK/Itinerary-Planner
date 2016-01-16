@@ -21,30 +21,52 @@
 				<th> Vacation Spot </th>>
 				<th> Number of Days </th>
 				<th> Demographic </th>
-				<th> Photo URL </th>
+				<th> Best Time to Visit </th>
 				<th> Cost </th>
 			</tr>
-			<tbody>
-				<tr ng-repeat="destination in vacationList"></tr>
-					<td> {{destination.locationl}}</td>
-			</tbody>
 		</thread>
 		<tr>
-			<th> <input type="text" name="vLocation"> </th>
-			<th> <input type="number" name="numDays"></th>
-			<th> <select>
+			<th> <input type="text" name="vLocation" ng-model="destination.location"> </th>
+			<th> <input type="number" name="numDays" ng-model="destination.days"></th>
+			<th> <select ng-model="destination.demographic"> 
 					<option value="couples"> "Couples" </option>
 					<option value="group"> "Groups" </option>
 					<option value="solo"> "Solo" </option>
 				</select>	
-			<th> <input type="url" name"photoURL"> </th>
-			<th> <form>
-				  <input type="radio" name="cost" value="$" checked> $
-				  <input type="radio" name="cost" value="$$"> $$
-				  <input type="radio" name="cost" value="$$$"> $$$ 
+			<th> 
+				<label>Summer</label>
+				<input type="checkbox" ng-model="destination.summer"> 
+				<label>Spring</label>
+				<input type="checkbox" ng-model="destination.spring">
+				<label>Fall</label>
+				<input type="checkbox" ng-model="destination.fall">
+				<label>Winter</label>
+				<input type="checkbox" ng-model="destination.winter">
+			</th>
+			<th> <form >
+				  <input type="radio" ng-model="destination.cost" value="$" checked> $
+				  <input type="radio" ng-model="destination.cost" value="$$"> $$
+				  <input type="radio" ng-model="destination.cost" value="$$$"> $$$ 
 				</form> </th>
+			<td> 
+				<button class="btn btn-primary" ng-click="addDestination()">Add</button>
+				<button class="btn btn-primary" ng-click="updateDestination()">Update</button>
+				<but
+
+				</td>
 		</tr>
+	<thread>
+		<tr ng-repeat="destination in vacationlist"> 
+			<th> {{destination.location}} </th> 
+			<th> {{destination.days}} </th> 
+			<th> {{destination.demographic}} </th> 
+			<th> {{destination.summer}} {{destination.spring}} {{destination.fall}} {{destination.winter}} </th> 
+			<th> {{destination.cost}} </th>
+			<td> <button class="btn btn-primary" ng-click="editDestination(destination._id)">Edit</td> 
+		</tr>
+	</thread>
 	</table>
+
 
 </div>
 
