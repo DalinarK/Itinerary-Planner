@@ -14,7 +14,7 @@
 <body>
 
 <div class="container" ng-controller="AppCtrl">
-	<h1>Itinerary Planner</h1>
+	<h1>Vacation Itinerary Planner</h1>
 	<table class="table">
 		<thread>
 			<tr>
@@ -25,8 +25,9 @@
 				<th> Cost </th>
 			</tr>
 		</thread>
+		<form>
 		<tr>
-			<th> <input type="text" name="vLocation" ng-model="destination.location"> </th>
+			<th> <input type="text" name="vLocation" ng-model="destination.location" required> </th>
 			<th> <input type="number" name="numDays" ng-model="destination.days"></th>
 			<th> <select ng-model="destination.demographic"> 
 					<option value="couples"> "Couples" </option>
@@ -49,12 +50,13 @@
 				  <input type="radio" ng-model="destination.cost" value="$$$"> $$$ 
 				</form> </th>
 			<td> 
-				<button class="btn btn-primary" ng-click="addDestination()">Add</button>
-				<button class="btn btn-primary" ng-click="updateDestination()">Update</button>
+				<button type="submit" class="btn btn-primary" ng-disabled ="button" nt-init="button=true" ng-click="addDestination()">Add</button>
+				<button class="btn btn-primary" ng-click="updateDestination(); button=false" >Update</button>
 				<but
 
 				</td>
 		</tr>
+	</form>
 	<thread>
 		<tr ng-repeat="destination in vacationlist"> 
 			<th> {{destination.location}} </th> 

@@ -35,10 +35,12 @@ myApp.controller('AppCtrl', function($scope, $http)
 
     //sends the data to server.js to be added to the database. It gets
     //the object back + the db ID # on success
-    $http.post('/vacationlist', destData).success(function(response){
-    console.log(response);
-    });
-
+    if(destData.hasOwnProperty("location"))
+    {
+        $http.post('/vacationlist', destData).success(function(response){
+        console.log(response);
+        });
+    }
     refresh();
 
     };
