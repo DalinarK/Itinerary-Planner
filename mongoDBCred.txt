@@ -1,6 +1,6 @@
 user: gopher
 pwd: N0vember1
 
-sudo mongo admin --username gopher --password N0vember1
+sudo mongo [if from local enter address+port] admin --username gopher --password N0vember1
 
 db.vacationdb.drop() from local command line terminal
