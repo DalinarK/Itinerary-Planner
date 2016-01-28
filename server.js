@@ -44,8 +44,9 @@ app.put('/vacationlist/:id', function (req, res) {
     	//Will add activities to the List Entity 
     	console.log("received an array update request")
 
+    	//using push instead of addtoset. Will add activities even if they match with previous activiteis in array.
     	db.vacationdb.findAndModify({query: {_id: mongojs.ObjectId(id)},
-    	update: {$addToSet: {list: ["doge"]}},
+    	update: {$push: {list: ["doge"]}},
     	new: true}
     	, function (err, doc){
     		res.json(doc);
