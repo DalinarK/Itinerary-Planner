@@ -44,13 +44,13 @@ app.put('/vacationlist/:id', function (req, res) {
     		res.json(doc);
     	}
 	);
+});
 
-app.delete('/vacationlist/:id', function(req, res) )
+app.delete('/vacationlist/:id', function(req, res)
 {
 	var id = req.params.id;
 	console.log(req.body.location);
-	db.vacationdb.remove(query: {_id: mongojs.ObjectID(id)})
-}
+	db.vacationdb.remove({query: {_id: mongojs.ObjectID(id)}})
 });
 
 //body parser module is used to parse the body of the posted text so
