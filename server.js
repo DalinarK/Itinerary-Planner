@@ -40,21 +40,31 @@ app.put('/vacationlist/:id', function (req, res) {
     console.log(req.body);
     if(req.body.arrayUpdate == "true")
     {
+    	//Will add activities to the List Entity 
     	console.log("received an array update request")
+
+    	db.vacationdb.findAndModify({query: {_id: mongojs.ObjectId(id)},
+    	update: {$set: {List: {}}},
+    	new: true}
+    	, function (err, doc){
+    		res.json(doc);
+    	}
+
+	);
     }
-    db.vacationdb.findAndModify({query: {_id: mongojs.ObjectId(id)},
+    else
+    {
+    	//Will update entries in the Vacation Entity
+    	db.vacationdb.findAndModify({query: {_id: mongojs.ObjectId(id)},
     	update: {$set: {location: req.body.location, days: req.body.days, demographic: req.body.demographic, summer: req.body.summer, spring: req.body.spring, fall: req.body.fall, winter: req.body.winter, cost: req.body.cost}},
     	new: true}
     	, function (err, doc){
     		res.json(doc);
     	}
-    // db.vacationdb.findAndModify({query: {_id: mongojs.ObjectId(id)},
-    // 	update: {$set: {location: req.body.location, days: req.body.days, demographic: req.body.demographic, summer: req.body.summer, spring: req.body.spring, fall: req.body.fall, winter: req.body.winter, cost: req.body.cost}},
-    // 	new: true}
-    // 	, function (err, doc){
-    // 		res.json(doc);
-    // 	}
+
 	);
+    }
+
 });
 
 app.delete('/vacationlist/:id', function(req, res)
