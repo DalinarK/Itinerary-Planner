@@ -13,8 +13,11 @@ app.get('/vacationlist', function(req, res) {
 	console.log("I received a GET request!!!");
 	db.vacationdb.find(function (err, docs) {
 		console.log("returning findings from db")
+		var documentMod = docs;
+		//add a cache time amount for the client to use
+		documentMod["cache"] = "5";
 		//turns it into a JSON string so that it will print out the objects within the array http://stackoverflow.com/questions/14895287/how-to-print-object-array-in-javascript
-		var lineJSON = JSON.stringify(docs, null, 4);
+		var lineJSON = JSON.stringify(documentMod, null, 4);
 		console.info(lineJSON);
 		res.json(docs);
 	});
