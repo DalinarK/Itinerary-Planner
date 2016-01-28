@@ -38,12 +38,22 @@ app.get('/vacationlist/:id', function (req, res ) {
 app.put('/vacationlist/:id', function (req, res) {
     var id = req.params.id;
     console.log(req.body);
+    if(req.body.arrayUpdate == "true")
+    {
+    	console.log("received an array update request")
+    }
     db.vacationdb.findAndModify({query: {_id: mongojs.ObjectId(id)},
     	update: {$set: {location: req.body.location, days: req.body.days, demographic: req.body.demographic, summer: req.body.summer, spring: req.body.spring, fall: req.body.fall, winter: req.body.winter, cost: req.body.cost}},
     	new: true}
     	, function (err, doc){
     		res.json(doc);
     	}
+    // db.vacationdb.findAndModify({query: {_id: mongojs.ObjectId(id)},
+    // 	update: {$set: {location: req.body.location, days: req.body.days, demographic: req.body.demographic, summer: req.body.summer, spring: req.body.spring, fall: req.body.fall, winter: req.body.winter, cost: req.body.cost}},
+    // 	new: true}
+    // 	, function (err, doc){
+    // 		res.json(doc);
+    // 	}
 	);
 });
 
