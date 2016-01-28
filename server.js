@@ -14,7 +14,7 @@ app.get('/vacationlist', function(req, res) {
 	db.vacationdb.find(function (err, docs) {
 		console.log("returning findings from db")
 		console.log(docs);
-		console.log(docs.list);
+		console.log(docs.location);
 		res.json(docs);
 	});
 });
