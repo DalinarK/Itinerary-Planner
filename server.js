@@ -77,11 +77,18 @@ app.delete('/vacationlist/:id', function(req, res)
     console.log(req.body);
     if (req.body.arrayDelete == "true")
     {
+    	//Will search for an Vacation Entity and delete an activity from the List entity
     	console.log("array Delete detected!");
-    	console.log("Element name to be deleted" + req.body.Title);
+	    db.vacationdb.findAndModify({query: {_id: mongojs.ObjectId(id)},
+	    	update: {$pull: {Title: req.body.Title}}}, 
+	    	function (err, doc){
+	    		res.json(doc)
+	    	}
+		);
     }
     else
     {
+    	//otherwise will search for a Vacation Entity and delete the whole thing plus it's nested List. 
     	console.log("delete entire vacation detected!");
 	    db.vacationdb.findAndModify({query: {_id: mongojs.ObjectId(id)},
 	    	remove: true}, 

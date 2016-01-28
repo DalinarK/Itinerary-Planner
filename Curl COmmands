@@ -23,4 +23,4 @@ curl -X PUT -H "Content-Type: application/json" --header 'Accept: application/js
 
 #Delete an activity to a vacation
 
-curl -X DELETE -H "Content-Type: application/json" --header 'Accept: application/json' -d '{"arrayDelete": "true", "Title":"State Opera House"}' 'http://ec2-54-213-159-144.us-west-2.compute.amazonaws.com:3001/vacationlist/56aa60996128793d1610e879'
+curl -X DELETE -H "Content-Type: application/json" --header 'Accept: application/json' -d '{"arrayDelete": "true", "Title":"Prague Castle"}' 'http://ec2-54-213-159-144.us-west-2.compute.amazonaws.com:3001/vacationlist/56aa60996128793d1610e879'
