@@ -75,12 +75,21 @@ app.delete('/vacationlist/:id', function(req, res)
 	console.log("I received a delete request!");
     var id = req.params.id;
     console.log(req.body);
-    db.vacationdb.findAndModify({query: {_id: mongojs.ObjectId(id)},
-    	remove: true}, 
-    	function (err, doc){
-    		res.json(doc)
-    	}
-	);
+    if (req.body.arrayDelete == "true")
+    {
+    	console.log("array Delete detected!");
+    }
+    else
+    {
+    	console.log("delete entire vacation detected!");
+	    db.vacationdb.findAndModify({query: {_id: mongojs.ObjectId(id)},
+	    	remove: true}, 
+	    	function (err, doc){
+	    		res.json(doc)
+	    	}
+		);
+    }
+
 });
 
 //body parser module is used to parse the body of the posted text so
