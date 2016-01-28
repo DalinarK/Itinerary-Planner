@@ -45,7 +45,7 @@ app.put('/vacationlist/:id', function (req, res) {
     	console.log("received an array update request")
 
     	db.vacationdb.findAndModify({query: {_id: mongojs.ObjectId(id)},
-    	update: {$set: {List: {}}},
+    	update: {$set: {list: []}},
     	new: true}
     	, function (err, doc){
     		res.json(doc);
