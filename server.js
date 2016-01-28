@@ -13,7 +13,8 @@ app.get('/vacationlist', function(req, res) {
 	console.log("I received a GET request!!!");
 	db.vacationdb.find(function (err, docs) {
 		console.log("returning findings from db")
-		console.info(docs);
+		var lineJSON = JSON.stringify(docs);
+		console.info(lineJSON);
 		res.json(docs);
 	});
 });
