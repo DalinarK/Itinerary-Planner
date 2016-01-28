@@ -80,7 +80,7 @@ app.delete('/vacationlist/:id', function(req, res)
     	//Will search for an Vacation Entity and delete an activity from the List entity
     	console.log("array Delete detected!");
 	    db.vacationdb.findAndModify({query: {_id: mongojs.ObjectId(id)},
-	    	update: {$pull: {Title: req.body.Title}}}, 
+	    	update: {$pull: {list: {Title: req.body.Title} }}}, 
 	    	function (err, doc){
 	    		res.json(doc)
 	    	}
