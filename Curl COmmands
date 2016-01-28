@@ -19,4 +19,4 @@ curl -X DELETE -H "Content-Type: application/json" --header 'Accept: application
 
 #Add an activity to a vacation
 
-curl -X PUT -H "Content-Type: application/json" --header 'Accept: application/json' -d '{"arrayUpdate": "true"}' 'http://ec2-54-213-159-144.us-west-2.compute.amazonaws.com:3001/vacationlist/56aa00f237c547e512bcae83'
+curl -X PUT -H "Content-Type: application/json" --header 'Accept: application/json' -d '{"arrayUpdate": "true", "list": [{"Title":"State Opera House","Description":"The price of admission is worth it just to see the architecture","Duration":"3","Cost":"50","Picture":"photolocation"}]}' 'http://ec2-54-213-159-144.us-west-2.compute.amazonaws.com:3001/vacationlist/56aa00f237c547e512bcae83'
