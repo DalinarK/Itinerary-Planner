@@ -12,7 +12,7 @@ curl -X POST -H "Content-Type: application/json" --header 'Accept: application/j
 
 #Update
 
-curl -X PUT -H "Content-Type: application/json" --header 'Accept: application/json' -d '{ "days":"20"}' 'http://ec2-54-213-159-144.us-west-2.compute.amazonaws.com:3001/vacationlist/56a9f183910b9de01091ac3a'
+curl -X PUT -H "Content-Type: application/json" --header 'Accept: application/json' -d '{ "days":"23"}' 'http://ec2-54-213-159-144.us-west-2.compute.amazonaws.com:3001/vacationlist/56a9f183910b9de01091ac3a'
 
 #DELETE a whole entry
 curl -X DELETE -H "Content-Type: application/json" --header 'Accept: application/json' 'http://ec2-54-213-159-144.us-west-2.compute.amazonaws.com:3001/vacationlist/56a9f0f5798578c21066a712'
