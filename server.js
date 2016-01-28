@@ -53,10 +53,7 @@ app.delete('/vacationlist/:id', function(req, res)
     var id = req.params.id;
     console.log(req.body.location);
     db.vacationdb.findAndModify({query: {_id: mongojs.ObjectId(id)},
-    	remove: true}, 
-    	function (err, doc){
-    		res.json(doc);
-    	}
+    remove: true}, 
 	);
 });
 
