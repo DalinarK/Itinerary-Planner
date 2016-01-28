@@ -78,6 +78,7 @@ app.delete('/vacationlist/:id', function(req, res)
     if (req.body.arrayDelete == "true")
     {
     	console.log("array Delete detected!");
+    	console.log("Element name to be deleted" + req.body.Title);
     }
     else
     {

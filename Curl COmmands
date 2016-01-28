@@ -15,11 +15,12 @@ curl -X POST -H "Content-Type: application/json" --header 'Accept: application/j
 curl -X PUT -H "Content-Type: application/json" --header 'Accept: application/json' -d '{ "days":"23"}' 'http://ec2-54-213-159-144.us-west-2.compute.amazonaws.com:3001/vacationlist/56a9f183910b9de01091ac3a'
 
 #DELETE a whole entry
-curl -X DELETE -H "Content-Type: application/json" --header 'Accept: application/json' 'http://ec2-54-213-159-144.us-west-2.compute.amazonaws.com:3001/vacationlist/56a9f0f5798578c21066a712'
+curl -X DELETE -H "Content-Type: application/json" --header 'Accept: application/json' 'http://ec2-54-213-159-144.us-west-2.compute.amazonaws.com:3001/vacationlist/56aa588abf1eab7813ed804e'
 
 #Add an activity to a vacation
 
 curl -X PUT -H "Content-Type: application/json" --header 'Accept: application/json' -d '{"arrayUpdate": "true", "list": {"Title":"State Opera House","Description":"The price of admission is worth it just to see the architecture","Duration":"3","Cost":"50","Picture":"photolocation"}}' 'http://ec2-54-213-159-144.us-west-2.compute.amazonaws.com:3001/vacationlist/56aa588abf1eab7813ed804e'
 
-Delete an activity to a vacation
-curl -X DELETE -H "Content-Type: application/json" --header 'Accept: application/json' -d '{"arrayDelete": "true", "list": {"Title":"State Opera House","Description":"The price of admission is worth it just to see the architecture"}}''http://ec2-54-213-159-144.us-west-2.compute.amazonaws.com:3001/vacationlist/56a9f0f5798578c21066a712'
+#Delete an activity to a vacation
+
+curl -X DELETE -H "Content-Type: application/json" --header 'Accept: application/json' -d '{"arrayDelete": "true", "Title":"State Opera House"}' 'http://ec2-54-213-159-144.us-west-2.compute.amazonaws.com:3001/vacationlist/56aa60996128793d1610e879'
