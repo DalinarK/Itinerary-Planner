@@ -9,12 +9,13 @@ var bodyParser = require('body-parser');
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 
+//This route will return all vacations
 app.get('/vacationlist', function(req, res) {
 	console.log("I received a GET request!!!");
 	db.vacationdb.find(function (err, docs) {
 		console.log("returning findings from db")
 		var documentMod = docs;
-		//add a cache time amount for the client to use
+		//add a cache time amount for the client to use. Does not work for unknown reasons. Need to research JSON and Objects more.
 		documentMod["cache"] = "5";
 		//turns it into a JSON string so that it will print out the objects within the array http://stackoverflow.com/questions/14895287/how-to-print-object-array-in-javascript
 		var lineJSON = JSON.stringify(documentMod, null, 4);
@@ -23,7 +24,7 @@ app.get('/vacationlist', function(req, res) {
 	});
 });
 
-
+//This route will add a vacation.
 app.post('/vacationlist', function(req,res) {
 	console.log("I received a POST request!!!")
 	console.log(req.body);
@@ -32,6 +33,7 @@ app.post('/vacationlist', function(req,res) {
 	})
 });
 
+//This route will return one vacation only
 app.get('/vacationlist/:id', function (req, res ) {
 	var id = req.params.id;
 	console.log(id);
@@ -40,6 +42,7 @@ app.get('/vacationlist/:id', function (req, res ) {
 	});
 });
 
+//This route handles all of the updating functions
 app.put('/vacationlist/:id', function (req, res) {
     var id = req.params.id;
     console.log(req.body);
@@ -73,6 +76,7 @@ app.put('/vacationlist/:id', function (req, res) {
 
 });
 
+//This route handles all of the deleting functions
 app.delete('/vacationlist/:id', function(req, res)
 {
 	console.log("I received a delete request!");

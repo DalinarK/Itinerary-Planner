@@ -97,49 +97,49 @@ myApp.controller('AppCtrl', function($scope, $http)
         var destData = $scope.destination
 
         for(var attribute in destData) {
-        if(destData.hasOwnProperty("summer"))
-        {
-            if( destData.summer === true)
+            if(destData.hasOwnProperty("summer"))
             {
-                console.log("summer found!" + destData.summer);
-                destData.summer = "summer";
-            }
-            else if ( destData.summer === false)
-                destData.summer = null;
+                if( destData.summer === true)
+                {
+                    console.log("summer found!" + destData.summer);
+                    destData.summer = "summer";
+                }
+                else if ( destData.summer === false)
+                    destData.summer = null;
 
-        }
-        if(destData.hasOwnProperty("spring"))
-        {
-            if( destData.spring === true)
-            {
-                console.log("spring found!" + destData.spring);
-                destData.spring = "spring";
             }
-            else if ( destData.spring === false)
-                destData.spring = null;
+            if(destData.hasOwnProperty("spring"))
+            {
+                if( destData.spring === true)
+                {
+                    console.log("spring found!" + destData.spring);
+                    destData.spring = "spring";
+                }
+                else if ( destData.spring === false)
+                    destData.spring = null;
 
-        }
-        if(destData.hasOwnProperty("fall"))
-        {
-            if( destData.fall === true)
-            {
-                console.log("fall found!" + destData.fall);
-                destData.fall = "fall";
             }
-            else if ( destData.fall === false)
-                destData.fall = null;
-        }
-        if(destData.hasOwnProperty("winter"))
-        {
-            if( destData.winter === true)
+            if(destData.hasOwnProperty("fall"))
             {
-                console.log("winter found!" + destData.winter);
-                destData.winter = "winter";
+                if( destData.fall === true)
+                {
+                    console.log("fall found!" + destData.fall);
+                    destData.fall = "fall";
+                }
+                else if ( destData.fall === false)
+                    destData.fall = null;
             }
-            else if ( destData.winter === false)
-                destData.winter = null;
-        }
-    };
+            if(destData.hasOwnProperty("winter"))
+            {
+                if( destData.winter === true)
+                {
+                    console.log("winter found!" + destData.winter);
+                    destData.winter = "winter";
+                }
+                else if ( destData.winter === false)
+                    destData.winter = null;
+            }
+     };
         $http.put('/vacationlist/' + $scope.destination._id, destData).success(function(response) {
             refresh();
         })
