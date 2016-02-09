@@ -23,15 +23,16 @@ app.get('/vacationlist', function(req, res) {
 		res.json(docs);
 	});
 });
-
+//
 //This route will add a vacation.
 app.post('/vacationlist', function(req,res) {
 	console.log("I received a POST request!!!")
 	console.log(req.body);
 	db.vacationdb.insert(req.body, function(err, doc){
-		res.json(doc);	
+		res.json(doc);
+		console.log(res.json(doc));	
 	})
-	console.log(res.json(doc));
+	
 });
 
 //This route will return one vacation only
