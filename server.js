@@ -31,6 +31,7 @@ app.post('/vacationlist', function(req,res) {
 	db.vacationdb.insert(req.body, function(err, doc){
 		res.json(doc);	
 	})
+	console.log(res.json(doc));
 });
 
 //This route will return one vacation only
