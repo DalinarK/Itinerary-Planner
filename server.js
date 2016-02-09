@@ -30,7 +30,6 @@ app.post('/vacationlist', function(req,res) {
 	console.log(req.body);
 	db.vacationdb.insert(req.body, function(err, doc){
 		res.json(doc);
-		console.log(res.json(doc));	
 	})
 	
 });
