@@ -109,9 +109,51 @@ app.delete('/vacationlist/:id', function(req, res)
 });
 
 //This route handles all of the deleting functions
-app.delete('/imgurResponse', function(req, res)
+app.get('/imgurResponse', function(req, res)
 {
 	console.log("I received something from imgur!");
+
+      // 	$(function () {
+      //   var extractToken = function(hash) {
+      //     var match = hash.match(/access_token=(\w+)/);
+      //     return !!match && match[1];
+      //   };
+      //   var setting =
+      //     {
+      //       'host':     "soundcloud.com"
+      //     , 'clientId': YOUR_CLIENT_ID
+      //     };
+      //   var authHost     = "https://"     + setting.host;
+      //   var resourceHost = "https://api." + setting.host;
+      //   var endUserAuthorizationEndpoint = authHost + "/connect";
+      //   var token = extractToken(document.location.hash);
+      //   if (token) {
+      //     $('div.authenticated').show();
+      //     $('span.token').text(token);
+      //     $.ajax({
+      //         url: resourceHost + '/me'
+      //       , beforeSend: function (xhr) {
+      //           xhr.setRequestHeader('Authorization', "OAuth " + token);
+      //           xhr.setRequestHeader('Accept',        "application/json");
+      //         }
+      //       , success: function (response) {
+      //           var container = $('span.user');
+      //           if (response) {
+      //             container.text(response.username);
+      //           } else {
+      //             container.text("An error occurred.");
+      //           }
+      //         }
+      //     });
+      //   } else {
+      //     $('div.authenticate').show();
+      //     var authUrl = endUserAuthorizationEndpoint + 
+      //       "?response_type=token" +
+      //       "&client_id="    + setting.clientId +
+      //       "&redirect_uri=" + window.location;
+      //     $("a.connect").attr("href", authUrl);
+      //   }
+      // });
 });
 
 //body parser module is used to parse the body of the posted text so
