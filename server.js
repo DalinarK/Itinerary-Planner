@@ -108,6 +108,12 @@ app.delete('/vacationlist/:id', function(req, res)
 
 });
 
+//This route handles all of the deleting functions
+app.delete('/vacationlist/:id', function(req, res)
+{
+	console.log("I received something from imgur!");
+});
+
 //body parser module is used to parse the body of the posted text so
 //that server understands what it's saving. 
 
