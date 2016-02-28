@@ -109,7 +109,7 @@ app.delete('/vacationlist/:id', function(req, res)
 });
 
 //This route handles all of the deleting functions
-app.delete('/vacationlist/:id', function(req, res)
+app.delete('/imgurResponse', function(req, res)
 {
 	console.log("I received something from imgur!");
 });
