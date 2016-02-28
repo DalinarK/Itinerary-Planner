@@ -14,12 +14,14 @@ app.get('/vacationlist', function(req, res) {
 	console.log("I received a GET request!!!");
 	db.vacationdb.find(function (err, docs) {
 		console.log("returning findings from db")
+    current = window.location.href;
+    console.log(current);
 		var documentMod = docs;
 		//add a cache time amount for the client to use. Does not work for unknown reasons. Need to research JSON and Objects more.
 		documentMod["cache"] = "5";
 		//turns it into a JSON string so that it will print out the objects within the array http://stackoverflow.com/questions/14895287/how-to-print-object-array-in-javascript
 		var lineJSON = JSON.stringify(documentMod, null, 4);
-		console.info(lineJSON);
+		// console.info(lineJSON);
 		res.json(docs);
 	});
 });
