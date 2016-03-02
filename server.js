@@ -92,8 +92,8 @@ app.post('/login', function (req, res) {
     console.log("I received a login request!!")
     console.log(req.body);
 
-    var jsonObject = JSON.parse(req.body);
-
+    string incomingUsername = req.body.username;
+    console.log(incomingUsername);
     // string username = jsonObject["username"];
     // console.log("request name is" + );
     // db.vacationdb.findOne({_username: mongojs.ObjectID(id)}, function (err, doc) {
