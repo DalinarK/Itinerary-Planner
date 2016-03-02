@@ -83,7 +83,7 @@ app.post('/register', function (req, res) {
     console.log(req.body);
     db.vacationdb.insert(req.body, function(err, doc){
     res.json(doc);
-    console.log("this is the response" + doc);
+    console.log("this is the response" + json(doc));
     })
 
 });
