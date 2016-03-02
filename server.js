@@ -96,8 +96,8 @@ app.post('/login', function (req, res) {
     var incomingPassword = req.body.password;
 
     db.vacationdb.findOne({username: mongojs.ObjectID(incomingUsername)}, function (err, doc) {
-    console.log("Found following entry: " + JSON.stringify(doc));
-    res.json(doc);
+    // console.log("Found following entry: " + JSON.stringify(doc));
+    // res.json(doc);
     });
 
 });
