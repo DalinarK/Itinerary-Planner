@@ -88,7 +88,7 @@ app.post('/register', function (req, res) {
 
 });
 
-app.get('/login', function (req, res) {
+app.post('/login', function (req, res) {
     console.log("I received a login request!!")
     console.log(req.body);
 
