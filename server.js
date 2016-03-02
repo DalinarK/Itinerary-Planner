@@ -97,11 +97,15 @@ app.post('/login', function (req, res) {
 
     db.vacationdb.findOne({username: incomingUsername}, function (err, doc) {
     if (doc == null)
-    {
+    { 
       console.log("Did not find any results!")
+      res.json('{"results":"false"}')
     }
-    console.log("Found following entry: " + JSON.stringify(doc));
-    res.json(doc);
+    else
+    {
+      console.log("Found following entry: " + JSON.stringify(doc));
+      res.json(doc);
+    }
     });
 
 });
