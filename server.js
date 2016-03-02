@@ -78,7 +78,7 @@ app.put('/vacationlist/:id', function (req, res) {
 });
 
 //This route adds a user to the database
-app.post('/registerUser', function (req, res) {
+app.post('/register', function (req, res) {
     console.log("I received a new user Registration!")
     console.log(req.body);
 
