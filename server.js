@@ -95,7 +95,7 @@ app.post('/login', function (req, res) {
     var incomingUsername = req.body.username;
     var incomingPassword = req.body.password;
 
-    db.vacationdb.find({username: 'test'}, function (err, doc) {
+    db.vacationdb.find({username: mongojs.ObjectId(incomingUsername)}, function (err, doc) {
     console.log("Found following entry: " + JSON.stringify(doc));
     res.json(doc);
     });
