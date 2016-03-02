@@ -92,7 +92,7 @@ app.post('/login', function (req, res) {
     console.log("I received a login request!!")
     console.log(req.body);
 
-    string incomingUsername = req.body.username;
+    var incomingUsername = req.body.username;
     console.log(incomingUsername);
     // string username = jsonObject["username"];
     // console.log("request name is" + );
