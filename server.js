@@ -96,8 +96,8 @@ app.post('/login', function (req, res) {
     var incomingPassword = req.body.password;
 
     db.vacationdb.find({username: 'test'}, function (err, doc) {
-    // console.log("Found following entry: " + JSON.stringify(doc));
-    // res.json(doc);
+    console.log("Found following entry: " + JSON.stringify(doc));
+    res.json(doc);
     });
 
 });
