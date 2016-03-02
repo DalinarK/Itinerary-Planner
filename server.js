@@ -93,13 +93,12 @@ app.post('/login', function (req, res) {
     console.log(req.body);
 
     var incomingUsername = req.body.username;
-    console.log(incomingUsername);
-    // string username = jsonObject["username"];
-    // console.log("request name is" + );
-    // db.vacationdb.findOne({_username: mongojs.ObjectID(id)}, function (err, doc) {
-    // console.log("Found following entry: " + JSON.stringify(doc));
-    // res.json(doc);
-    // });
+    var incomingPassword = req.body.password;
+
+    db.vacationdb.findOne({username: mongojs.ObjectID(incomingUsername)}, function (err, doc) {
+    console.log("Found following entry: " + JSON.stringify(doc));
+    res.json(doc);
+    });
 
 });
 
