@@ -99,8 +99,9 @@ app.post('/login', function (req, res) {
     if (doc == null)
     { 
       console.log("Did not find any results!")
-      var JSONstring = "{results:false}"
-      res.json(JSONstring)
+      var JSONstring = '{ "returnResult": "false" }'
+      var JSONobj = eval(JSONstring);
+      res.json(JSONobj)
     }
     else
     {
