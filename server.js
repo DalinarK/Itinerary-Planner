@@ -81,6 +81,10 @@ app.put('/vacationlist/:id', function (req, res) {
 app.post('/register', function (req, res) {
     console.log("I received a new user Registration!")
     console.log(req.body);
+    db.vacationdb.insert(req.body, function(err, doc){
+    res.json(doc);
+    console.log("this is the response" + doc);
+    })
 
 });
 
