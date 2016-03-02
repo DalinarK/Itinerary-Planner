@@ -93,6 +93,7 @@ app.post('/login', function (req, res) {
     console.log(req.body);
 
     var jsonObject = JSON.parse(req.body);
+    console.log("request name is" + jsonObject["username"]);
     // db.vacationdb.findOne({_username: mongojs.ObjectID(id)}, function (err, doc) {
     // console.log("Found following entry: " + JSON.stringify(doc));
     // res.json(doc);
