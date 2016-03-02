@@ -92,6 +92,11 @@ app.post('/login', function (req, res) {
     console.log("I received a login request!!")
     console.log(req.body);
 
+    db.vacationdb.findOne({_id: mongojs.ObjectID(id)}, function (err, doc) {
+    console.log("Found following entry: " + JSON.stringify(doc));
+    res.json(doc);
+    });
+
 });
 
 
