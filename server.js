@@ -105,6 +105,8 @@ app.post('/login', function (req, res) {
     }
     else
     {
+      var JSONobj = doc;
+      JSONobj["returnResult"] = "true";
       console.log("Found following entry: " + JSON.stringify(doc));
       res.json(doc);
     }
