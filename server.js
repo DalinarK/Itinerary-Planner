@@ -88,6 +88,11 @@ app.post('/register', function (req, res) {
 
 });
 
+app.get('/login', function (req, res) {
+    console.log("I received a login request!!")
+    console.log(req.body);
+
+});
 
 
 //This route handles all of the deleting functions
