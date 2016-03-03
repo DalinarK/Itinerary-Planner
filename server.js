@@ -4,7 +4,6 @@ var mongojs = require('mongojs');
 // var db = mongojs('vacationdb', ['vacationdb']);
 var credentials = 'mongodb://gopher:N0vember1@ec2-54-213-159-144.us-west-2.compute.amazonaws.com:27017'
 var db = mongojs(credentials, ['vacationdb']);
-var userdb = mongojs(credentials, ['userdb']);
 var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname + "/public"));
@@ -82,7 +81,7 @@ app.put('/vacationlist/:id', function (req, res) {
 app.post('/register', function (req, res) {
     console.log("I received a new user Registration!")
     console.log(req.body);
-    userdb.vacationdb.insert(req.body, function(err, doc){
+    db.userdb.insert(req.body, function(err, doc){
     res.json(doc);
     console.log("this is the response" + JSON.stringify(doc));
     })
@@ -96,7 +95,7 @@ app.post('/login', function (req, res) {
     var incomingUsername = req.body.username;
     var incomingPassword = req.body.password;
 
-    userdb.vacationdb.findOne({username: incomingUsername}, function (err, doc) {
+    db.userdb.findOne({username: incomingUsername}, function (err, doc) {
     if (doc == null)
     { 
       console.log("Did not find any results!")
