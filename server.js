@@ -44,8 +44,8 @@ app.get('/vacationlist/:id', function (req, res ) {
 });
 
 //This route will return vacations that match the username
-app.get('/vacationbyuser/:id', function (req, res ) {
-  var id = req.params.id;
+app.get('/vacationbyuser/', function (req, res ) {
+  var id = "test"
   console.log(id);
   db.vacationdb.findOne({username: mongojs.ObjectID(id)}, function (err, doc) {
     res.json(doc);
