@@ -49,6 +49,7 @@ app.get('/vacationbyuser', function (req, res ) {
   var id = "test"
   console.log(id);
   db.vacationdb.findOne({username: id}, function (err, doc) {
+    console.log(doc);
     res.json(doc);
   });
 });
