@@ -3,7 +3,7 @@ var app = express();
 var mongojs = require('mongojs');
 // var db = mongojs('vacationdb', ['vacationdb']);
 var credentials = 'mongodb://gopher:N0vember1@ec2-54-213-159-144.us-west-2.compute.amazonaws.com:27017'
-var db = mongojs(credentials, ['vacationdb']);
+var db = mongojs(credentials, ['vacationdb', 'userdb']);
 var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname + "/public"));
