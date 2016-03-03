@@ -14,7 +14,7 @@ curl -X POST -H "Content-Type: application/json" --header 'Accept: application/j
 
 #Add
 
-curl -X POST -H "Content-Type: application/json" --header 'Accept: application/json' -d '{"name":"SoloTripToPrague", "location":"curllocation", "days":"50", "demographic":"solo", "cost":"$$", "winter":"winter", "list": [{"Title":"Prague Castle","Description":"One of the required visits for anyone visitng Prague...","Duration":"3","Cost":"0","Picture":"photolocation"},{"Title":"Karlov Lazne","Description":"If you came to party, check out this 5 story...","Duration":"3","Cost":"20","Picture":"photolocation"}]}' 'http://ec2-54-213-159-144.us-west-2.compute.amazonaws.com:3001/vacationlist'
+curl -X POST -H "Content-Type: application/json" --header 'Accept: application/json' -d '{"username":"test", "name":"SoloTripToPrague", "location":"curllocation", "days":"50", "demographic":"solo", "cost":"$$", "winter":"winter", "list": [{"Title":"Prague Castle","Description":"One of the required visits for anyone visitng Prague...","Duration":"3","Cost":"0","Picture":"photolocation"},{"Title":"Karlov Lazne","Description":"If you came to party, check out this 5 story...","Duration":"3","Cost":"20","Picture":"photolocation"}]}' 'http://ec2-54-213-159-144.us-west-2.compute.amazonaws.com:3001/vacationlist'
 
 #Update
 
