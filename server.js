@@ -48,9 +48,9 @@ app.get('/vacationbyuser', function (req, res ) {
   console.log("received request for itineraries by user");
   var id = "test"
   console.log(id);
-  // db.vacationdb.findOne({username: mongojs.ObjectID(id)}, function (err, doc) {
-  //   res.json(doc);
-  // });
+  db.vacationdb.findOne({username: mongojs.ObjectID(id)}, function (err, doc) {
+    res.json(doc);
+  });
 });
 
 //This route handles all of the updating functions
