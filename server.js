@@ -77,7 +77,7 @@ app.put('/vacationlist/:id', function (req, res) {
     {
     	//Will update entries in the Vacation Entity
     	db.vacationdb.findAndModify({query: {_id: mongojs.ObjectId(id)},
-    	update: {$set: {location: req.body.location, days: req.body.days, demographic: req.body.demographic, summer: req.body.summer, spring: req.body.spring, fall: req.body.fall, winter: req.body.winter, cost: req.body.cost}},
+    	update: {$set: {location: req.body.location, days: req.body.days, demographic: req.body.demographic, cost: req.body.cost}},
     	new: true}
     	, function (err, doc){
     		res.json(doc);
